@@ -16,10 +16,21 @@
 //    printf("\nsum = %f\n\n", sum);
 //    return 0;
 //}
-
+// N, tol, max_iters
 
 int main(int argc, char** argv){
-    for(int i = 0; i < argc; i++)
-        printf("%d : %s\n",i,argv[i]);
+    int N = 0, max_iters = 0;
+    float tol = 0;
+    if (argc != 4){
+        printf("incorrect inputs");
+        return 1;
+    }
+
+    N = std::stoi(argv[1]);
+    tol = std::stof(argv[2]);
+    max_iters = std::stoi(argv[3]);
+
+    float arr[N][N];
+
     return 0;
 }
