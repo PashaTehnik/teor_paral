@@ -7,7 +7,7 @@ double sum = 0;
 int main() {
 #pragma acc kernels
     for(int i = 0; i < 10000000; i++){
-        arr[i] = sin(i);
+        arr[i] = sin((2*M_PI)/10000000*i);
     }
 #pragma acc kernels
     for(auto i: arr){
