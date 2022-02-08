@@ -1,8 +1,8 @@
 #include <iostream>
 #include <math.h>
 
-float arr[10000000];
-float sum = 0;
+double arr[10000000];
+double sum = 0;
 
 int main() {
 #pragma acc kernels
