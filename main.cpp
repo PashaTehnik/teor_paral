@@ -22,7 +22,7 @@ int main(int argc, char** argv){
     int N = 0, max_iters = 0;
     float tol = 0;
     if (argc != 4){
-        printf("incorrect inputs");
+        printf("incorrect inputs\n");
         return 1;
     }
 
@@ -31,6 +31,6 @@ int main(int argc, char** argv){
     max_iters = std::stoi(argv[3]);
 
     float arr[N][N];
-
+    printf("all is ok");
     return 0;
 }
