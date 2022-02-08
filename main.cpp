@@ -41,9 +41,9 @@ int main(int argc, char** argv){
     ///////////////////// print
 
     printf("\n");
-    for(int j = 1; j < N - 1; j++){
+    for(int j = 0; j <= N - 1; j++){
         printf("\n");
-        for(int i = 1; i < N - 1; i++) {
+        for(int i = 0; i <= N - 1; i++) {
             printf("%f  ", a[i][j]);
         }
     }
@@ -54,8 +54,8 @@ int main(int argc, char** argv){
     while ((iter<max_iters)&&(err > tol)){
         iter++;
         err = 0;
-        for(int j = 1; j < N - 1; j++){
-            for(int i = 1; i < N - 1; i++) {
+        for(int j = 1; j <= N - 2; j++){
+            for(int i = 1; i <= N - 2; i++) {
 
                 newa[i][j] = 0.25*(a[i+1][j] + a[i-1][j] + a[i][j+1] + a[i][j-1]);
 
@@ -64,8 +64,8 @@ int main(int argc, char** argv){
             }
         }
 
-        for(int j = 1; j < N - 1; j++){
-            for(int i = 1; i < N - 1; i++) {
+        for(int j = 1; j <= N - 2; j++){
+            for(int i = 1; i <= N - 2; i++) {
 
                 a[i][j] = newa[i][j];
 
@@ -76,9 +76,9 @@ int main(int argc, char** argv){
 
     ///////////////////// print
     printf("\n");
-    for(int j = 1; j < N - 1; j++){
+    for(int j = 0; j <= N - 1; j++){
         printf("\n");
-        for(int i = 1; i < N - 1; i++) {
+        for(int i = 0; i <= N - 1; i++) {
             printf("%f  ", a[i][j]);
         }
     }
