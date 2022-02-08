@@ -35,7 +35,7 @@ int main(int argc, char** argv){
           err = tol+1;
     for(int j = 1; j < N - 1; j++) {
         for (int i = 1; i < N - 1; i++) {
-            a[i][j] = (float) rand() / (float) (RAND_MAX) * 5;
+            a[i][j] = ((float) rand() / (float)(RAND_MAX)) * 5;
         }
     }
     /////////////////////
