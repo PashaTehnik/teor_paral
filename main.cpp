@@ -35,7 +35,7 @@ int main(int argc, char** argv){
     printf("\n\n\n");
 
     /////////////////////
-#pragma acc kernels
+#pragma acc data kernels
     while ((iter<max_iters)&&(err > tol)){
         iter++;
         err = 0;
