@@ -33,30 +33,37 @@ int main(int argc, char** argv){
         }
     }
     printf("\n\n\n");
-
+    #pragma acc data copy(a[0:N][0:N]) create (newa[0:N][0:N])
     /////////////////////
-#pragma acc data kernels
+
     while ((iter<max_iters)&&(err > tol)){
         iter++;
         err = 0;
-        for(int j = 1; j <= N - 2; j++){
-            for(int i = 1; i <= N - 2; i++) {
+        #pragma acc data present(a, newa)
+        #pragma acc parallel reduction(max:err)
+        {
+            #pragma acc loop independent
+            for(int j = 1; j <= N - 2; j++){
+                #pragma acc loop independent
+                for(int i = 1; i <= N - 2; i++) {
 
-                newa[i][j] = 0.25*(a[i+1][j] + a[i-1][j] + a[i][j+1] + a[i][j-1]);
+                    newa[i][j] = 0.25*(a[i+1][j] + a[i-1][j] + a[i][j+1] + a[i][j-1]);
 
-                err = fmax(err, newa[i][j] - a[i][j]);
+                    err = fmax(err, newa[i][j] - a[i][j]);
 
+                }
+            }
+
+            #pragma acc loop independent
+            for(int j = 1; j <= N - 2; j++){
+                #pragma acc loop independent
+                for(int i = 1; i <= N - 2; i++) {
+
+                    a[i][j] = newa[i][j];
+
+                }
             }
         }
-
-        for(int j = 1; j <= N - 2; j++){
-            for(int i = 1; i <= N - 2; i++) {
-
-                a[i][j] = newa[i][j];
-
-            }
-        }
-
     }
 
     ///////////////////// print
