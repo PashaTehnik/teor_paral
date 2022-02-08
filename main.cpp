@@ -13,6 +13,6 @@ int main() {
     for(auto i: arr){
         sum += i;
     }
-
+    printf("sum = %f", sum);
     return 0;
 }
