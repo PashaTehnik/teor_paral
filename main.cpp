@@ -24,7 +24,6 @@ int main(int argc, char** argv){
             a[i][j]=0;
         }
     }
-    #pragma acc data copy(a[0:N][0:N]) create (newa[0:N][0:N])
     a[0][0]=10;
     a[N-1][0]=20;
     a[0][N-1]=20;
@@ -33,8 +32,6 @@ int main(int argc, char** argv){
             d2=(a[N-1][0] - a[0][0])/N,
             d3=(a[N-1][N-1] - a[N-1][0])/N,
             d4=(a[N-1][N-1] - a[0][N-1])/N;
-    #pragma acc data present(a,newa)
-    #pragma acc parallel loop
     for (int i = 1; i < N-1; i++){
         a[0][i]=a[0][i-1] + d1;
 
@@ -57,6 +54,7 @@ int main(int argc, char** argv){
     printf("\n\n\n");
     /////////////////////
 
+#pragma acc data copy(a[0:N][0:N]) create (newa[0:N][0:N])
     while ((iter<max_iters)&&(err > tol)){
         iter++;
         err = 0;
