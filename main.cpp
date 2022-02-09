@@ -20,9 +20,15 @@ int main(int argc, char** argv){
           err = tol+1;
     for(int j = 0; j < N; j++) {
         for (int i = 0; i < N; i++) {
-            a[i][j] = (float)((int)(((float) rand() / (float)(RAND_MAX)) * 5) % 5);
+            //a[i][j] = (float)((int)(((float) rand() / (float)(RAND_MAX)) * 5) % 5);
+            a[i][j]=0;
         }
     }
+    a[0][0]=10;
+    a[N-1][0]=20;
+    a[0][N-1]=20;
+    a[N-1][N-1]=30;
+
     ///////////////////// print
 
     printf("\n");
