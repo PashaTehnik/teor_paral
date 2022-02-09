@@ -33,7 +33,7 @@ int main(int argc, char** argv){
             d2=(a[N-1][0] - a[0][0])/N,
             d3=(a[N-1][N-1] - a[N-1][0])/N,
             d4=(a[N-1][N-1] - a[0][N-1])/N;
-    #pragma acc parallel
+    #pragma acc parallel loop
     for (int i = 1; i < N-1; i++){
         a[0][i]=a[0][i-1] + d1;
 
