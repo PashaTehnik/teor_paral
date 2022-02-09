@@ -90,7 +90,7 @@ int main(int argc, char** argv){
     for(int j = 0; j <= N - 1; j++){
         printf("\n");
         for(int i = 0; i <= N - 1; i++) {
-            printf("%2f  ", a[i][j]);
+            printf("%.2f  ", a[i][j]);
         }
     }
     printf("\n");
