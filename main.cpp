@@ -47,7 +47,7 @@ int main(int argc, char** argv){
 
     printf("\n");
     for(int j = 0; j <= N - 1; j++){
-        printf("\n\n");
+        printf("\n\n\n");
         for(int i = 0; i <= N - 1; i++) {
             printf("%5.2f  ", a[i][j]);
         }
