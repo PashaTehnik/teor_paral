@@ -43,7 +43,7 @@ int main(int argc, char** argv){
     }
 
     ///////////////////// print
-    printf("\n\n\nN - %d\ntol - %f\nmax_iter - %d \n\n\n", N, tol, max_iters);
+    printf("\n\n\nN - %d\ntol - %.10f\nmax_iter - %d \n\n\n", N, tol, max_iters);
 
     printf("\n");
     for(int j = 0; j <= N - 1; j++){
