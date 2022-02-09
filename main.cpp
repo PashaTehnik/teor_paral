@@ -51,7 +51,7 @@ int main(int argc, char** argv){
             printf("%.2f  ", a[i][j]);
         }
     }
-    printf("\n\n\n");
+    printf("\n\n\nN - %d\ntol - %f\nmax_iter - %d \n\n\n", N, tol, max_iters);
     /////////////////////
 
 #pragma acc data copy(a[0:N][0:N]) create (newa[0:N][0:N])
