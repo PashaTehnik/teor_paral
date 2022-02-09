@@ -52,7 +52,7 @@ int main(int argc, char** argv){
             printf("%5.2f  ", a[i][j]);
         }
     }
-    printf("\n\n\n\n\n\n", N, tol, max_iters);
+    printf("\n\n\n\n", N, tol, max_iters);
     /////////////////////
 
 #pragma acc data copy(a[0:N][0:N]) create (newa[0:N][0:N])
@@ -94,7 +94,7 @@ int main(int argc, char** argv){
             printf("%5.2f  ", a[i][j]);
         }
     }
-    printf("\n");
+    printf("\n\n\n");
 
     return 0;
 }
