@@ -48,7 +48,7 @@ int main(int argc, char** argv){
     for(int j = 0; j <= N - 1; j++){
         printf("\n");
         for(int i = 0; i <= N - 1; i++) {
-            printf("%8.2f  ", a[i][j]);
+            printf("%5.2f  ", a[i][j]);
         }
     }
     printf("\n\n\nN - %d\ntol - %f\nmax_iter - %d \n\n\n", N, tol, max_iters);
