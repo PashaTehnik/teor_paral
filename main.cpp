@@ -18,8 +18,8 @@ int main(int argc, char** argv){
     float a[N][N],
           newa[N][N],
           err = tol+1;
-    for(int j = 0; j < N; j++) {
-        for (int i = 0; i < N; i++) {
+    for(int j = 1; j < N - 1; j++) {
+        for (int i = 1; i < N - 1; i++) {
             //a[i][j] = (float)((int)(((float) rand() / (float)(RAND_MAX)) * 5) % 5);
             a[i][j]=0;
         }
@@ -28,6 +28,22 @@ int main(int argc, char** argv){
     a[N-1][0]=20;
     a[0][N-1]=20;
     a[N-1][N-1]=30;
+    float d=(a[0][N-1] - a[0][0])/N;
+    for (int i = 1; i < N-1; i++){
+        a[0][i]=a[0][i-1] + d;
+    }
+    d=(a[N-1][0] - a[0][0])/N;
+    for (int i = 1; i < N-1; i++){
+        a[i][0]=a[i-1][0] + d;
+    }
+    d=(a[N-1][N-1] - a[N-1][0])/N;
+    for (int i = 1; i < N-1; i++){
+        a[i][N-1]=a[i-1][N-1] + d;
+    }
+    d=(a[N-1][N-1] - a[0][N-1])/N;
+    for (int i = 1; i < N-1; i++){
+        a[N-1][i]=a[N-1][i-1] + d;
+    }
 
     ///////////////////// print
 
